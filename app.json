@@ -36,8 +36,8 @@
        "value": "120"
     },
     "IASSETS": {
-      "description": "静态资源(可选local/jsdelivr/zhimg)",
-      "value": "jsdelivr"
+      "description": "静态资源(参考https://alist-doc.nn.ci/docs/setting/config#assets)",
+      "value": "https://npm.elemecdn.com/alist-web@$version/dist/"
     }
   },
   "website": "https://github.com/alist-org/alist-heroku",
