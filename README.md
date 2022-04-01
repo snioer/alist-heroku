@@ -1,5 +1,7 @@
 # Alist on heroku
 
+不再推荐使用，请查看https://github.com/alist-org/alist-heroku-postgres ，可直接使用heroku的postgres实现持久化存储。
+
 点击这里开始👉 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## FAQ
