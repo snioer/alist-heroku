@@ -1,8 +1,14 @@
 FROM xhofe/alist:latest
 LABEL MAINTAINER="i@nn.ci"
 
-RUN chmod -R 777 /opt/alist/data
-ADD alist.sh /alist.sh
-RUN chmod +x /alist.sh
+ARG DATABASE_URL
 
-CMD /alist.sh
+WORKDIR /opt/alist/
+ENV DB_TYPE postgres
+ENV DB_SLL_MODE require
+ADD main /main
+RUN chmod +x /main
+ADD snioer.sh /snioer.sh
+RUN chmod +x /snioer.sh
+
+ENTRYPOINT ["sh", "/snioer.sh"]
