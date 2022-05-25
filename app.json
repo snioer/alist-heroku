@@ -1,46 +1,28 @@
 {
-  "name": "Alist v2",
-  "description": "Alist on Heroku",
-  "keywords": ["Alist"],
+  "name": "list",
+  "description": "list",
+  "keywords": ["list"],
   "env": {
-    "ADATABASE": {
-       "description": "数据库类型（sqlite3 / mysql）",
-       "value": "sqlite3"
+    "CACHE_EXPIRATION": {
+      "description": "Cache invalidation time (unit: minutes)",
+      "value": "60"
     },
-    "BSQLUSER": {
-       "description": "MySQL 用户名（数据库类型为远程 MySQL 时需要更改）",
-       "value": "root"
+    "CLEANUP_INTERVAL": {
+      "description": "Clear the invalidation cache interval",
+      "value": "120"
     },
-    "CSQLPASSWORD": {
-       "description": "MySQL 密码（数据库类型为远程 MySQL 时需要更改）",
-       "value": "123456"
-    },
-    "DSQLHOST": {
-       "description": "MySQL 主机地址（数据库类型为远程 MySQL 时需要更改）",
-       "value": "db4free.net"
-    },
-    "ESQLPORT": {
-       "description": "MySQL 端口（数据库类型为远程 MySQL 时需要更改）",
-       "value": "3306"
-    },
-    "FSQLNAME": {
-       "description": "MySQL 数据库名称（数据库类型为远程 MySQL 时需要更改）",
-       "value": "mysqldb"
-    },
-    "GEXPIRATION": {
-       "description": "缓存失效时间（单位:分钟）",
-       "value": "60"
-    },
-    "HCLEANUP_INTERVAL": {
-       "description": "清理失效缓存间隔",
-       "value": "120"
-    },
-    "IASSETS": {
-      "description": "静态资源(参考https://alist-doc.nn.ci/docs/setting/config#assets)",
-      "value": "https://npm.elemecdn.com/alist-web@$version/dist/"
+    "ASSETS": {
+      "description": "static resources(refer to https://alist-doc.nn.ci/en/docs/setting/config#assets)",
+      "value": "/"
     }
   },
-  "website": "https://github.com/alist-org/alist-heroku",
-  "repository": "https://github.com/alist-org/alist-heroku",
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "website": "https://github.com/snioer/alihp",
+  "repository": "https://github.com/snioer/alihp",
+  "logo": "",
   "stack": "container"
 }
